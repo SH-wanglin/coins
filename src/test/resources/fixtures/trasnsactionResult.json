@@ -1,0 +1,12 @@
+{
+  "fromUser":
+    {
+      "userId":1,
+      "coins":1
+    },
+  "toUser":
+    {
+      "userId":2,
+      "coins":3
+    }
+}

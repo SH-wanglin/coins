@@ -1,0 +1,159 @@
+INFO  [2017-08-27 15:50:39,129] org.eclipse.jetty.util.log: Logging initialized @917ms to org.eclipse.jetty.util.log.Slf4jLog
+INFO  [2017-08-27 15:50:39,193] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /
+INFO  [2017-08-27 15:50:39,194] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /
+INFO  [2017-08-27 15:50:39,229] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /
+INFO  [2017-08-27 15:50:39,229] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /
+INFO  [2017-08-27 15:50:39,234] io.dropwizard.server.ServerFactory: Starting Coins
+================================================================================
+
+                              Coins
+
+================================================================================
+
+
+INFO  [2017-08-27 15:50:39,342] org.eclipse.jetty.setuid.SetUIDListener: Opened application@44cffc25{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+INFO  [2017-08-27 15:50:39,343] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@2a369e14{HTTP/1.1,[http/1.1]}{0.0.0.0:8081}
+INFO  [2017-08-27 15:50:39,344] org.eclipse.jetty.server.Server: jetty-9.4.z-SNAPSHOT
+ERROR [2017-08-27 15:50:39,429] org.apache.tomcat.jdbc.pool.ConnectionPool: Unable to create initial connections of pool.
+! java.net.ConnectException: 拒绝连接 (Connection refused)
+! at java.net.PlainSocketImpl.socketConnect(Native Method)
+! at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+! at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+! at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+! at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+! at java.net.Socket.connect(Socket.java:589)
+! at com.mysql.cj.core.io.StandardSocketFactory.connect(StandardSocketFactory.java:202)
+! at com.mysql.cj.mysqla.io.MysqlaSocketConnection.connect(MysqlaSocketConnection.java:57)
+! ... 29 common frames omitted
+! Causing: com.mysql.cj.core.exceptions.CJCommunicationsException: Communications link failure
+! 
+! The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+! at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+! at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+! at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+! at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+! at com.mysql.cj.core.exceptions.ExceptionFactory.createException(ExceptionFactory.java:54)
+! at com.mysql.cj.core.exceptions.ExceptionFactory.createException(ExceptionFactory.java:93)
+! at com.mysql.cj.core.exceptions.ExceptionFactory.createException(ExceptionFactory.java:133)
+! at com.mysql.cj.core.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:149)
+! at com.mysql.cj.mysqla.io.MysqlaSocketConnection.connect(MysqlaSocketConnection.java:83)
+! at com.mysql.cj.mysqla.MysqlaSession.connect(MysqlaSession.java:122)
+! at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:1726)
+! at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:1596)
+! ... 26 common frames omitted
+! Causing: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+! 
+! The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+! at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:590)
+! at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:57)
+! at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:1606)
+! at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:633)
+! at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:347)
+! at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:219)
+! at org.apache.tomcat.jdbc.pool.PooledConnection.connectUsingDriver(PooledConnection.java:310)
+! at org.apache.tomcat.jdbc.pool.PooledConnection.connect(PooledConnection.java:203)
+! at org.apache.tomcat.jdbc.pool.ConnectionPool.createConnection(ConnectionPool.java:732)
+! at org.apache.tomcat.jdbc.pool.ConnectionPool.borrowConnection(ConnectionPool.java:664)
+! at org.apache.tomcat.jdbc.pool.ConnectionPool.init(ConnectionPool.java:479)
+! at org.apache.tomcat.jdbc.pool.ConnectionPool.<init>(ConnectionPool.java:154)
+! at org.apache.tomcat.jdbc.pool.DataSourceProxy.pCreatePool(DataSourceProxy.java:118)
+! at org.apache.tomcat.jdbc.pool.DataSourceProxy.createPool(DataSourceProxy.java:107)
+! at io.dropwizard.db.ManagedPooledDataSource.start(ManagedPooledDataSource.java:38)
+! at io.dropwizard.lifecycle.JettyManaged.doStart(JettyManaged.java:27)
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+! at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:131)
+! at org.eclipse.jetty.server.Server.start(Server.java:452)
+! at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:113)
+! at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:113)
+! at org.eclipse.jetty.server.Server.doStart(Server.java:419)
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+! at io.dropwizard.cli.ServerCommand.run(ServerCommand.java:53)
+! at io.dropwizard.cli.EnvironmentCommand.run(EnvironmentCommand.java:44)
+! at io.dropwizard.cli.ConfiguredCommand.run(ConfiguredCommand.java:85)
+! at io.dropwizard.cli.Cli.run(Cli.java:74)
+! at io.dropwizard.Application.run(Application.java:89)
+! at com.wanglin.CoinsApplication.main(CoinsApplication.java:14)
+INFO  [2017-08-27 15:50:39,437] org.eclipse.jetty.server.AbstractConnector: Started application@44cffc25{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+WARN  [2017-08-27 15:50:39,437] org.eclipse.jetty.util.thread.QueuedThreadPool: dw-admin{STOPPED,1<=0<=64,i=0,q=0} rejected org.eclipse.jetty.io.ManagedSelector$$Lambda$72/130211746@50f097b5
+ERROR [2017-08-27 15:50:39,437] io.dropwizard.cli.ServerCommand: Unable to start server, shutting down
+! java.net.ConnectException: 拒绝连接 (Connection refused)
+! at java.net.PlainSocketImpl.socketConnect(Native Method)
+! at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+! at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+! at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+! at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+! at java.net.Socket.connect(Socket.java:589)
+! at com.mysql.cj.core.io.StandardSocketFactory.connect(StandardSocketFactory.java:202)
+! at com.mysql.cj.mysqla.io.MysqlaSocketConnection.connect(MysqlaSocketConnection.java:57)
+! ... 29 common frames omitted
+! Causing: com.mysql.cj.core.exceptions.CJCommunicationsException: Communications link failure
+! 
+! The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+! at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+! at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+! at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+! at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+! at com.mysql.cj.core.exceptions.ExceptionFactory.createException(ExceptionFactory.java:54)
+! at com.mysql.cj.core.exceptions.ExceptionFactory.createException(ExceptionFactory.java:93)
+! at com.mysql.cj.core.exceptions.ExceptionFactory.createException(ExceptionFactory.java:133)
+! at com.mysql.cj.core.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:149)
+! at com.mysql.cj.mysqla.io.MysqlaSocketConnection.connect(MysqlaSocketConnection.java:83)
+! at com.mysql.cj.mysqla.MysqlaSession.connect(MysqlaSession.java:122)
+! at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:1726)
+! at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:1596)
+! ... 26 common frames omitted
+! Causing: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+! 
+! The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+! at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:590)
+! at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:57)
+! at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:1606)
+! at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:633)
+! at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:347)
+! at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:219)
+! at org.apache.tomcat.jdbc.pool.PooledConnection.connectUsingDriver(PooledConnection.java:310)
+! at org.apache.tomcat.jdbc.pool.PooledConnection.connect(PooledConnection.java:203)
+! at org.apache.tomcat.jdbc.pool.ConnectionPool.createConnection(ConnectionPool.java:732)
+! at org.apache.tomcat.jdbc.pool.ConnectionPool.borrowConnection(ConnectionPool.java:664)
+! at org.apache.tomcat.jdbc.pool.ConnectionPool.init(ConnectionPool.java:479)
+! at org.apache.tomcat.jdbc.pool.ConnectionPool.<init>(ConnectionPool.java:154)
+! at org.apache.tomcat.jdbc.pool.DataSourceProxy.pCreatePool(DataSourceProxy.java:118)
+! at org.apache.tomcat.jdbc.pool.DataSourceProxy.createPool(DataSourceProxy.java:107)
+! at io.dropwizard.db.ManagedPooledDataSource.start(ManagedPooledDataSource.java:38)
+! at io.dropwizard.lifecycle.JettyManaged.doStart(JettyManaged.java:27)
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+! at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:131)
+! at org.eclipse.jetty.server.Server.start(Server.java:452)
+! at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:113)
+! at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:113)
+! at org.eclipse.jetty.server.Server.doStart(Server.java:419)
+! ... 7 common frames omitted
+! Causing: org.eclipse.jetty.util.MultiException: Multiple exceptions
+! at org.eclipse.jetty.server.Server.doStart(Server.java:416)
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+! at io.dropwizard.cli.ServerCommand.run(ServerCommand.java:53)
+! at io.dropwizard.cli.EnvironmentCommand.run(EnvironmentCommand.java:44)
+! at io.dropwizard.cli.ConfiguredCommand.run(ConfiguredCommand.java:85)
+! at io.dropwizard.cli.Cli.run(Cli.java:74)
+! at io.dropwizard.Application.run(Application.java:89)
+! at com.wanglin.CoinsApplication.main(CoinsApplication.java:14)
+! Suppressed: java.util.concurrent.RejectedExecutionException: org.eclipse.jetty.io.ManagedSelector$$Lambda$72/130211746@50f097b5
+! 	at org.eclipse.jetty.util.thread.QueuedThreadPool.execute(QueuedThreadPool.java:384)
+! 	at org.eclipse.jetty.io.SelectorManager.execute(SelectorManager.java:107)
+! 	at org.eclipse.jetty.io.ManagedSelector.doStart(ManagedSelector.java:96)
+! 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+! 	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:131)
+! 	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:113)
+! 	at org.eclipse.jetty.io.SelectorManager.doStart(SelectorManager.java:240)
+! 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+! 	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:131)
+! 	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:105)
+! 	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:270)
+! 	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:81)
+! 	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+! 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+! 	at org.eclipse.jetty.server.Server.doStart(Server.java:431)
+! 	... 7 common frames omitted
+INFO  [2017-08-27 15:50:39,440] org.eclipse.jetty.server.AbstractConnector: Stopped application@44cffc25{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+INFO  [2017-08-27 15:51:39,441] org.eclipse.jetty.server.AbstractConnector: Stopped admin@2a369e14{HTTP/1.1,[http/1.1]}{0.0.0.0:8081}
+Multiple exceptions
