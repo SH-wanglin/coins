@@ -1,5 +1,16 @@
 # Coins
 
+Java Version
+---
+1.8
+
+
+Database Connect
+---
+The default username/password is root/root
+If you want to modify, change it in config.yml
+
+
 如何启动项目
 ---
 
